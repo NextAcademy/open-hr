@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     root to: 'sessions#new'
   end
 
+  resources :staffs, controller: "staffs", only: [:new,:create]
+  resources :departments, controller: "departments", only: [:new,:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
