@@ -1,4 +1,4 @@
-class StaffsController < ApplicationController
+	class StaffsController < ApplicationController
 	def new
 		@staff = Staff.new()
 		authorize @staff
@@ -10,7 +10,6 @@ class StaffsController < ApplicationController
 		authorize @staff
 		if @staff.save
 			@user.save
-			@staff.update(user_id: @user.id)
 			redirect_to root_path
 		else
 	    	render template: "staffs/new"

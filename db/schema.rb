@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20160928041038) do
   end
 
   create_table "staffs", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.string   "email"
     t.datetime "created_at", null: false
