@@ -1,0 +1,10 @@
+
+  <%= form_for @department do |form| %>
+    <%= render partial: '/departments/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+
