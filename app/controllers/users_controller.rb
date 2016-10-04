@@ -1,23 +1,47 @@
 class UsersController < Clearance::UsersController
-	before_action :login_required, only: [:new,:create]
+
+	before_action :login_required, only: [:new,:create] 
 	def new
+		byebug
 		@user=User.new()
 	    render template: "users/new"
 	end
 
 	def create
 		@user=User.new(user_params)
-		authorize @user
-		if @user.save
-			redirect_to root_path
-		else
-			flash="Sign up failed."
-	    	render template: "users/new"
+		invite_code = request.referrer.split("/").last
+		@invite = Invite.find_redeemable(invite_code)
+
+		if @invite.nil?
+			authorize @user 
+			if @user.save
+				redirect_to root_path
+			else
+				flash[:notice] ="Sign up failed."
+		    	render template: "users/new"
+			end
+			return
 		end
-				
+
+	    if invite_code && @invite && @invite.email == @user.email
+	      if @user.save
+	        @invite.redeemed!
+	        # ClearanceMailer.deliver_confirmation @user
+	        flash[:notice] = "You will receive an email within the next few minutes. " <<
+	                         "It contains instructions for confirming your account."
+	        redirect_to root_path
+	      else
+	      	flash[:notice] ="Sign up failed."
+	        render :action => "new"
+	      end
+	    else
+	      flash[:notice] = "Sorry, that code is not redeemable"
+	      render :action => "new"
+		end
 	end
 
 	def dashboard
+
 	end
 
 
@@ -25,7 +49,8 @@ class UsersController < Clearance::UsersController
 	private
 
 	def login_required
-		redirect_to sign_in_path if !User.find_by(category:'admin').nil? && current_user.nil?
+		params[:invite_code]||= request.referrer.split("/").last if !request.referrer.nil?
+		redirect_to sign_in_path if !User.find_by(category:'admin').nil? && !signed_in? && Invite.find_by(invite_code:params[:invite_code]).nil?
 	end
 
 	def user_params

@@ -2,7 +2,12 @@
   <h2><%= t(".title") %></h2>
 
   <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
+    <%= if params[:invite_code].nil?
+          render partial: '/users/form', object: form 
+        else
+          render partial: '/users/invite_form', object: form 
+        end
+      %>
 
     <div class="submit-field">
       <%= form.submit %>

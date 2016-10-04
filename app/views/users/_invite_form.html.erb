@@ -1,0 +1,16 @@
+<div class="text-field">
+  <%= form.label :email %>
+  <%= form.text_field :email, value:params[:email] ,type: 'email' %>
+</div>
+
+<div class="password-field">
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+</div>
+
+
+<div class="category-field">
+  <%= form.label :category %>
+  <%= form.select :category, ["staff"]%>
+</div>
+

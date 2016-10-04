@@ -5,12 +5,15 @@
 	end
 
 	def create
-		@user = User.new(email:staff_params[:email],password: 123456,category:"staff")
+		# @user = User.new(email:staff_params[:email],password: 123456,category:"staff")
 		@staff = Staff.new(staff_params)
 		authorize @staff
 		if @staff.save
-			@user.save
-			redirect_to root_path
+			invite= Invite.create(email:@staff.email)
+			invite.invite!
+			#send email invitation to staff for email creation
+
+			redirect_to	send_invitation_url(invite.id)
 		else
 	    	render template: "staffs/new"
 		end
