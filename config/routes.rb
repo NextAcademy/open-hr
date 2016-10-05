@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get "/sign_in" => "sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
-  get "/sign_up" => "clearance/users#new", as: "sign_up"
+  get "/sign_up" => "users#new", as: "sign_up"
   constraints Clearance::Constraints::SignedIn.new do
     root to: 'users#dashboard', as: :admin_root
   end
@@ -21,6 +21,10 @@ Rails.application.routes.draw do
 
   resources :staffs, controller: "staffs", only: [:new,:create]
   resources :departments, controller: "departments", only: [:new,:create]
+
+  get '/send_invitation/:id' => 'invites#send_invitation', :as => 'send_invitation' 
+  match '/signup/:invite_code' => 'users#new', :as => 'redeem_invitation', via: [:get, :post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

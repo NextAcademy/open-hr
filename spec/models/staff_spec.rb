@@ -20,8 +20,8 @@ RSpec.describe Staff, :type => :model do
 		it "is invalid with a duplicate address" do
 			staff = Staff.new(name: "John", email:"test@gmail.com")
 			staff.save
-			staff2 = Staff.new(name:"Jack", email:"test@gmail.com")
-			expect(staff2).to_not be_valid
+			staff_duplicate = Staff.new(name:"Jack", email:"test@gmail.com")
+			expect(staff_duplicate).to_not be_valid
 		end
 	end
 end
