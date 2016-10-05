@@ -1,16 +1,16 @@
 <div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, value:params[:email] ,type: 'email' %>
+  <%= invite_form.label :email %>
+  <%= invite_form.text_field :email, value:@invite.email ,type: 'email', :readonly => true%>
 </div>
 
 <div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= invite_form.label :password %>
+  <%= invite_form.password_field :password %>
 </div>
 
 
 <div class="category-field">
-  <%= form.label :category %>
-  <%= form.select :category, ["staff"]%>
+  <%= invite_form.label :category %>
+  <%= invite_form.select :category, ["staff"],{}, {:readonly => true}%>
 </div>
 

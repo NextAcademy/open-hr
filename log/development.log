@@ -18111,3 +18111,2151 @@ Did you mean?  format
   Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:32:12 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 274ms (Views: 265.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 10:32:13 +0800
+  [1m[36mSQL (1.5ms)[0m  [1mDELETE FROM "staffs"[0m
+  [1m[35mSQL (4.0ms)[0m  DELETE FROM "invites"
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2016-10-05 10:32:31 +0800
+Processing by StaffsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+  Rendered staffs/_form.html.erb (14.7ms)
+  Rendered staffs/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 157ms (Views: 36.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2016-10-05 10:32:35 +0800
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "staff"=>{"email"=>"cmh114933@gmail.com", "name"=>"Chan"}, "commit"=>"Create Staff"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.6ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'cmh114933@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "staffs" ("email", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "cmh114933@gmail.com"], ["name", "Chan"], ["created_at", "2016-10-05 02:32:35.533732"], ["updated_at", "2016-10-05 02:32:35.533732"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "invites" ("email") VALUES ($1) RETURNING "id"  [["email", "cmh114933@gmail.com"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invites" SET "invite_code" = $1, "invited_at" = $2 WHERE "invites"."id" = $3[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"], ["invited_at", "2016-10-05 02:32:35.555267"], ["id", 2]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/send_invitation/2
+Completed 302 Found in 38ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/send_invitation/2" for 127.0.0.1 at 2016-10-05 10:32:35 +0800
+Processing by InvitesController#send_invitation as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."id" = $1 LIMIT 1[0m  [["id", 2]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_invitation at /home/chan/Desktop/NA_Work/open_hr/app/controllers/invites_controller.rb:5)
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (0.8ms)
+  Rendered invitation_mailer/invite.text.erb within layouts/mailer (0.3ms)
+
+InvitationMailer#invite: processed outbound mail in 125.0ms
+
+Sent mail to cmh114933@gmail.com (3804.9ms)
+Date: Wed, 05 Oct 2016 10:32:35 +0800
+From: from@example.com
+To: cmh114933@gmail.com
+Message-ID: <57f46643b1378_12b23f98ac9547e44247e@chan-UX303LN.mail>
+Subject: Welcome to the Company!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57f46643afc34_12b23f98ac9547e442360";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57f46643afc34_12b23f98ac9547e442360
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+InvitationMailer#invite
+
+, find me in app/views/invitation_mailer/invite.text.erb
+
+
+----==_mimepart_57f46643afc34_12b23f98ac9547e442360
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>InvitationMailer#invite</h1>
+
+<p>
+http://127.0.0.1:3000/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_57f46643afc34_12b23f98ac9547e442360--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 3952ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:32:39 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 10:33:04 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (28.5ms)
+  Rendered users/new.html.erb within layouts/application (30.5ms)
+Completed 500 Internal Server Error in 4544ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x0055dac260a020>:0x007f31447ef168>
+Did you mean?  format
+               formats
+               form_tag
+               form_for
+               formats=
+               fork):
+    1: <div class="text-field">
+    2:   <%= form.label :email %>
+    3:   <%= form.text_field :email, value:params[:email] ,type: 'email' %>
+    4: </div>
+    5: 
+  app/views/users/_invite_form.html.erb:2:in `_app_views_users__invite_form_html_erb___3077814362892643223_69924789712620'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb___2415470601629511440_69924789645060'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb___2415470601629511440_69924789645060'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.2ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 10:34:08 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (8124.1ms)
+  Rendered users/new.html.erb within layouts/application (8125.3ms)
+Completed 500 Internal Server Error in 10956ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x0055dac260a020>:0x007f3155404678>
+Did you mean?  format
+               formats
+               form_tag
+               form_for
+               formats=
+               fork):
+    1: <div class="text-field"><%byebug%>
+    2: 
+    3:   <%= form.label :email %>
+    4:   <%= form.text_field :email, value:params[:email] ,type: 'email' %>
+    5: </div>
+    6: 
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb___3077814362892643223_69924930056920'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb___2415470601629511440_69924789645060'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb___2415470601629511440_69924789645060'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.5ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 10:34:29 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (9024.0ms)
+  Rendered users/new.html.erb within layouts/application (9027.2ms)
+Completed 500 Internal Server Error in 10190ms (ActiveRecord: 0.6ms)
+
+SystemExit (exit):
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb___3077814362892643223_69924928716300'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb___2415470601629511440_69924789645060'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb___2415470601629511440_69924789645060'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (133.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (26.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (179.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (65.6ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 10:35:15 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.6ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (601.1ms)
+  Rendered users/new.html.erb within layouts/application (602.5ms)
+Completed 200 OK in 2000ms (Views: 621.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 10:35:17 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:35:37 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"staff"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered users/_invite_form.html.erb (7087.5ms)
+  Rendered users/new.html.erb within layouts/application (7089.5ms)
+Completed 200 OK in 7194ms (Views: 7105.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:36:20 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"staff"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "users"]]
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-10-05 10:36:20 +0800
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (1.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-05 10:36:26 +0800
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.9ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 10:36:29 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.5ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1733.7ms)
+  Rendered users/new.html.erb within layouts/application (1735.6ms)
+Completed 200 OK in 4269ms (Views: 1757.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 10:36:33 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:36:42 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"staff"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  Rendered users/_invite_form.html.erb (3263.3ms)
+  Rendered users/new.html.erb within layouts/application (3265.8ms)
+Completed 200 OK in 19062ms (Views: 3285.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:37:33 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"staff"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.6ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mSQL (2.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "category", "created_at", "updated_at", "remember_token") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "cmh114933@gmail.com"], ["encrypted_password", "$2a$10$9870qEMcONNz4UyUrastze.oswYapI22tpZ.pk5ztay0vM3bDWGa."], ["category", 2], ["created_at", "2016-10-05 02:39:08.274183"], ["updated_at", "2016-10-05 02:39:08.274183"], ["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2[0m  [["redeemed_at", "2016-10-05 02:39:08.284401"], ["id", 2]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 94864ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:39:08 +0800
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-10-05 10:39:19 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "cmh114933@gmail.com"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 84ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:39:19 +0800
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mSQL (5.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 5]]
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:40:50 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"admin"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.7ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5437ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:40:55 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+Processing by SessionsController#new as HTML
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1[0m
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2[0m  [["redeemed_at", nil], ["id", 2]]
+  [1m[35m (2.7ms)[0m  COMMIT
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:43:22 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"admin"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[35mInvite Load (0.1ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "category", "created_at", "updated_at", "remember_token") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "cmh114933@gmail.com"], ["encrypted_password", "$2a$10$g80K/blLn5Cmy1/x9fcAW..ayuYJRPFsUzRFmxFi7XpwDBd45RmXO"], ["category", 0], ["created_at", "2016-10-05 02:43:28.332165"], ["updated_at", "2016-10-05 02:43:28.332165"], ["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2[0m  [["redeemed_at", "2016-10-05 02:43:28.334449"], ["id", 2]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5510ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:43:28 +0800
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+Processing by SessionsController#new as HTML
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "d4160405913c5313cc08ffcdabd37aa7704fa853"]]
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-10-05 10:43:36 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "cmh114933@gmail.com"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 82ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:43:36 +0800
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mSQL (11.5ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2  [["redeemed_at", nil], ["id", 2]]
+  [1m[36m (21.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 10:49:14 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (864.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (866.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 4670ms (Views: 885.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:18 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:19 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:19 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:19 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:19 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:19 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 10:49:19 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:49:47 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"admin"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12988ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:50:00 +0800
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/cb2ed0d714d68b6f42f630638412c3b3352013aa" for 127.0.0.1 at 2016-10-05 10:50:08 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"cb2ed0d714d68b6f42f630638412c3b3352013aa"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "cb2ed0d714d68b6f42f630638412c3b3352013aa"]]
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-10-05 10:50:08 +0800
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/cb2ed0d714d68b6f42f630638412c3b3352013aa" for 127.0.0.1 at 2016-10-05 10:50:17 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"cb2ed0d714d68b6f42f630638412c3b3352013aa"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "cb2ed0d714d68b6f42f630638412c3b3352013aa"]]
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-10-05 10:50:17 +0800
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/cb2ed0d714d68b6f42f630638412c3b3352013aa" for 127.0.0.1 at 2016-10-05 10:50:24 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"cb2ed0d714d68b6f42f630638412c3b3352013aa"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "cb2ed0d714d68b6f42f630638412c3b3352013aa"]]
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-10-05 10:50:24 +0800
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 10:50:42 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.1ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1168.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (1171.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 5444ms (Views: 1195.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 10:51:03 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"staff"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "category", "created_at", "updated_at", "remember_token") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "cmh114933@gmail.com"], ["encrypted_password", "$2a$10$3JyApb9FpHi.Sf5KImwZfuvvlr6uzO8cS4sz6yV4LwIBxxjf4f71W"], ["category", 2], ["created_at", "2016-10-05 02:51:06.483918"], ["updated_at", "2016-10-05 02:51:06.483918"], ["remember_token", "01bedb69c6ca7c7e5dedab79b1cbdb113e6f8e66"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2  [["redeemed_at", "2016-10-05 02:51:06.485972"], ["id", 2]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3102ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 10:51:06 +0800
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:03:26 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (3.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 10.7ms)
+
+SyntaxError (/home/chan/Desktop/NA_Work/open_hr/app/views/users/_invite_form.html.erb:4: syntax error, unexpected ')', expecting =>
+...play:@invite.email, :disabled );@output_buffer.safe_append='
+...                               ^
+/home/chan/Desktop/NA_Work/open_hr/app/views/users/_invite_form.html.erb:15: syntax error, unexpected ')', expecting =>
+..."], value: "staff", :disabled );@output_buffer.safe_append='
+...                               ^
+/home/chan/Desktop/NA_Work/open_hr/app/views/users/_invite_form.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+/home/chan/Desktop/NA_Work/open_hr/app/views/users/_invite_form.html.erb:21: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/_invite_form.html.erb:4: syntax error, unexpected ')', expecting =>
+  app/views/users/_invite_form.html.erb:15: syntax error, unexpected ')', expecting =>
+  app/views/users/_invite_form.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/_invite_form.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.4ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (20.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (24.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 245ms (Views: 238.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:03:55 +0800
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1[0m
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:07:19 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (4.5ms)
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <div class="text-field">
+    2:   <%= invite_form.label :email %>
+    3:   <%= invite_form.text_field :email, value:@invite.email ,type: 'email' %>
+    4: </div>
+    5: 
+    6: <div class="password-field">
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb__2155502484821512764_70266647190360'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.6ms)
+  [1m[35mInvite Load (0.6ms)[0m  SELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2  [["redeemed_at", nil], ["id", 2]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:07:49 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (5.9ms)
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <div class="text-field">
+    2:   <%= invite_form.label :email %>
+    3:   <%= invite_form.text_field :email, value:@invite.email ,type: 'email' %>
+    4: </div>
+    5: 
+    6: <div class="password-field">
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb__2155502484821512764_70266647190360'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.2ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  ORDER BY "staffs"."id" DESC LIMIT 1
+  [1m[36mStaff Load (0.4ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  ORDER BY "staffs"."id" DESC LIMIT 1[0m
+  [1m[35mSQL (2.5ms)[0m  DELETE FROM "staffs" WHERE "staffs"."id" = $1  [["id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mSQL (2.6ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:08:22 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.5ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (3.3ms)
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <div class="text-field">
+    2:   <%= invite_form.label :email %>
+    3:   <%= invite_form.text_field :email, value:@invite.email ,type: 'email' %>
+    4: </div>
+    5: 
+    6: <div class="password-field">
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb__2155502484821512764_70266647190360'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.9ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:08:34 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (4.2ms)
+  Rendered users/new.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <div class="text-field">
+    2:   <%= invite_form.label :email %>
+    3:   <%= invite_form.text_field :email, value:@invite.email ,type: 'email' %>
+    4: </div>
+    5: 
+    6: <div class="password-field">
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb__2155502484821512764_70266647190360'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.2ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:10:47 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.8ms)
+
+NoMethodError (undefined method `split' for nil:NilClass):
+  app/controllers/users_controller.rb:7:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:10:56 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+Completed 500 Internal Server Error in 16253ms (ActiveRecord: 3.8ms)
+
+SystemExit (exit):
+  app/controllers/users_controller.rb:6:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (92.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (23.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (141.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.1ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2016-10-05 11:11:49 +0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.6ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/sign_in
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 54ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (16.4ms)
+  Rendered sessions/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 176ms (Views: 168.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:50 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:11:51 +0800
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:11:57 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 3417ms (Views: 23.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:12:18 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 2066ms (ActiveRecord: 1.1ms)
+
+SyntaxError (/home/chan/Desktop/NA_Work/open_hr/app/views/users/_invite_form.html.erb:3: syntax error, unexpected ')', expecting =>
+...mail ,type: 'email',:disabled );@output_buffer.safe_append='
+...                               ^
+/home/chan/Desktop/NA_Work/open_hr/app/views/users/_invite_form.html.erb:18: syntax error, unexpected keyword_ensure, expecting ')'
+/home/chan/Desktop/NA_Work/open_hr/app/views/users/_invite_form.html.erb:20: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/users/_invite_form.html.erb:3: syntax error, unexpected ')', expecting =>
+  app/views/users/_invite_form.html.erb:18: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/users/_invite_form.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__4330182607869269558_47009239519360'
+  app/controllers/users_controller.rb:9:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (32.9ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:12:32 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (2.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 3581ms (Views: 31.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:12:36 +0800
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:13:26 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.5ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 2440ms (Views: 20.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:28 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:29 +0800
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:13:52 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (3.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 3462ms (Views: 21.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:13:55 +0800
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:14:27 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (5.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 1786ms (Views: 23.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:14:29 +0800
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:15:11 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 1271ms (Views: 25.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:15:13 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 11:15:14 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 46ms (Views: 24.9ms | ActiveRecord: 2.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1[0m
+  [1m[35mStaff Load (0.9ms)[0m  SELECT  "staffs".* FROM "staffs"  ORDER BY "staffs"."id" DESC LIMIT 1
+
+
+Started GET "/users" for 127.0.0.1 at 2016-10-05 11:22:51 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.0ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:22:55 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (12.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (15.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 319ms (Views: 275.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:22:56 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 11:23:00 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 89ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 11:23:00 +0800
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (1.8ms)
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mStaff Load (0.4ms)[0m  SELECT  "staffs".* FROM "staffs"  ORDER BY "staffs"."id" DESC LIMIT 1
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" DESC LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 11:23:58 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 34ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:23:59 +0800
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (0.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 36ms (Views: 24.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:24:03 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 11:24:06 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+Completed 500 Internal Server Error in 98767ms (ActiveRecord: 1.4ms)
+
+SystemExit (exit):
+  app/controllers/users_controller.rb:26:in `create'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (178.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (54.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (273.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.4ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:25:49 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.6ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.6ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (29.4ms)
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (58.6ms)
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 474ms (Views: 332.6ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:25:50 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:25:50 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:25:51 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 11:25:55 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.6ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.7ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 169ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 11:25:55 +0800
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (20.2ms)
+  Rendered sessions/new.html.erb within layouts/application (25.6ms)
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 359ms (Views: 336.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:26:17 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.4ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.5ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (19.4ms)
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (49.6ms)
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 382ms (Views: 331.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:18 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:26:19 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 11:26:43 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.8ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.6ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 39866ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 11:27:23 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 42ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 11:27:29 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 66673ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 11:28:36 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+Processing by UsersController#new as HTML
+  Parameters: {"invite_code"=>"fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  Rendered users/_invite_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 11:28:40 +0800
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-05 11:28:50 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cmh114933@gmail.com", "password"=>"[FILTERED]", "category"=>"staff"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 LIMIT 1  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "fc9631d2e6a6ebaabfe9ee7ae8a28cb67126b0d4"]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'cmh114933@gmail.com' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "category", "created_at", "updated_at", "remember_token") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "cmh114933@gmail.com"], ["encrypted_password", "$2a$10$84TXUPO.9WxhPFv4H8V37OLxNd.80WTl9PXurgJfsF5rLHwPV0ube"], ["category", 2], ["created_at", "2016-10-05 03:29:13.484200"], ["updated_at", "2016-10-05 03:29:13.484200"], ["remember_token", "6b4fc7a0f5986a63d23f46bb6fbbc9f04833018c"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2  [["redeemed_at", "2016-10-05 03:29:14.968379"], ["id", 2]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from create at /home/chan/Desktop/NA_Work/open_hr/app/controllers/users_controller.rb:30)
+  Rendered sign_up_confirmation_mailer/confirm.html.erb within layouts/mailer (0.3ms)
+
+SignUpConfirmationMailer#confirm: processed outbound mail in 106.7ms
+
+Sent mail to cmh114933@gmail.com (3828.8ms)
+Date: Wed, 05 Oct 2016 11:29:17 +0800
+From: testatester37@gmail.com
+To: cmh114933@gmail.com
+Message-ID: <57f4738d46266_1ef93fa21035dc603688b@chan-UX303LN.mail>
+Subject: Your Signup is Successful
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Congratulations on a successful sign up</h1>
+
+<p> You may now sign in.</p>
+
+  </body>
+</html>
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 30604ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 11:29:21 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Processing by SessionsController#new as HTML
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (1.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.2ms)

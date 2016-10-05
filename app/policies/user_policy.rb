@@ -15,4 +15,8 @@ class UserPolicy < ApplicationPolicy
 			user.admin? if !user.nil?
 		end
 	end
+
+	def staff_invite_sign_up?
+		record.category == "staff" && user.nil?
+	end
 end	

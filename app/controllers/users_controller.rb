@@ -2,8 +2,9 @@ class UsersController < Clearance::UsersController
 
 	before_action :login_required, only: [:new,:create] 
 	def new
-		byebug
 		@user=User.new()
+		invite_code = request.original_url.split("/").last
+		@invite = Invite.find_redeemable(invite_code) if invite_code != "signup"
 	    render template: "users/new"
 	end
 
@@ -11,7 +12,6 @@ class UsersController < Clearance::UsersController
 		@user=User.new(user_params)
 		invite_code = request.referrer.split("/").last
 		@invite = Invite.find_redeemable(invite_code)
-
 		if @invite.nil?
 			authorize @user 
 			if @user.save
@@ -22,11 +22,11 @@ class UsersController < Clearance::UsersController
 			end
 			return
 		end
-
 	    if invite_code && @invite && @invite.email == @user.email
+	    	authorize @user, :staff_invite_sign_up?
 	      if @user.save
 	        @invite.redeemed!
-	        # ClearanceMailer.deliver_confirmation @user
+	        SignUpConfirmationMailer.confirm(@user).deliver
 	        flash[:notice] = "You will receive an email within the next few minutes. " <<
 	                         "It contains instructions for confirming your account."
 	        redirect_to root_path
@@ -36,7 +36,7 @@ class UsersController < Clearance::UsersController
 	      end
 	    else
 	      flash[:notice] = "Sorry, that code is not redeemable"
-	      render :action => "new"
+	      redirect_to root_path
 		end
 	end
 
