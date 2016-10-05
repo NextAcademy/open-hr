@@ -1,0 +1,19 @@
+
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">All Staff</a></li>
+  <li><a data-toggle="tab" href="#menu1">Active Staffs</a></li>
+  <li><a data-toggle="tab" href="#menu2">Inactive Staffs</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+	<table><%=render @staffs%></table>	
+  </div>
+  <div id="menu1" class="tab-pane fade">
+	<table><%=render @active_staffs%></table>	
+  </div>
+  <div id="menu2" class="tab-pane fade">
+	<table><%=render @inactive_staffs%></table>	
+  </div>
+</div>

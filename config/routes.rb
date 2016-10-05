@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     root to: 'sessions#new'
   end
 
-  resources :staffs, controller: "staffs", only: [:new,:create]
+  resources :staffs, controller: "staffs", only: [:new,:create,:index,:edit]
   resources :departments, controller: "departments", only: [:new,:create]
 
   get '/send_invitation/:id' => 'invites#send_invitation', :as => 'send_invitation' 

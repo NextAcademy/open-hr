@@ -20259,3 +20259,2177 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (2.0ms)
   [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "0740db2440eab208b409b3a730a8f226410257ce"]]
 Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateContracts (20161005042228)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (24.4ms)[0m  [1mCREATE TABLE "contracts" ("id" serial primary key, "staff_id" integer, "department_id" integer, "job_title" character varying, "salary" float, "commencement_date" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20161005042228"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateLeaves (20161005061637)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "leaves" ("id" serial primary key, "leave_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20161005061637"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAvailableLeaveRemaining (20161005061708)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "available_leave_remainings" ("id" serial primary key, "number_of_days" float DEFAULT 0.0, "leave_id" integer, "contract_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20161005061708"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'available_leave_remainings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'contracts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'departments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'invites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'leaves'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'staffs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 14:29:05 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "20cf4fd93a75b442260f45fa191e41a56d76f271"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "20cf4fd93a75b442260f45fa191e41a56d76f271"]]
+Processing by SessionsController#new as HTML
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "20cf4fd93a75b442260f45fa191e41a56d76f271"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  Rendered sessions/_form.html.erb (7.9ms)
+  Rendered sessions/new.html.erb within layouts/application (17.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "20cf4fd93a75b442260f45fa191e41a56d76f271"]]
+Completed 200 OK in 313ms (Views: 297.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-10-05 14:29:09 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"testatester37@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "testatester37@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 86ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-05 14:29:09 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 58ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs/index" for 127.0.0.1 at 2016-10-05 14:29:19 +0800
+
+ActionController::RoutingError (No route matches [GET] "/staffs/index"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.4ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:26 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 37ms (Views: 32.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:28 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:28 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:30 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:31 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:31 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:32 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:33 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:33 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:34 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:34 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:35 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:35 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:35 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:37 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:38 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:29:38 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:18 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:19 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:30:20 +0800
+Processing by StaffsController#index as HTML
+  Rendered staffs/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:30:21 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:38:02 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:03 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:38:05 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:39:28 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mStaff Load (0.7ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered staffs/index.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.2ms)
+
+ActionView::Template::Error (Missing partial staffs/_staff with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/chan/Desktop/NA_Work/open_hr/app/views"
+  * "/home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/clearance-1.14.1/app/views"
+):
+    6:   <li><a href="#">Menu 3</a></li>
+    7: </ul>
+    8: 
+    9: <%render @staffs%>
+  app/views/staffs/index.html.erb:9:in `_app_views_staffs_index_html_erb___182567797028550733_70296153005800'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.4ms)
+  Rendered staffs/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:39 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:41 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:42 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:42 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:42 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:42 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.7ms)
+  Rendered staffs/index.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:50 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:51 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:51 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:51 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:51 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:51 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:40:51 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:26 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:27 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:27 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:27 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:27 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:27 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:41:27 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:42:21 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.5ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.5ms)
+  Rendered staffs/index.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:42:21 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:42:21 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:42:21 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:42:21 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:42:21 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:42:21 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:42:22 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.4ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:16 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:23 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.4ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:24 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:32 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:34 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (2.8ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (4.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:35 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.9ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.6ms)
+  Rendered staffs/index.html.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:36 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.5ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.3ms)
+  Rendered staffs/index.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:47:53 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:54 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:56 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:56 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:47:57 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.7ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:06 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:08 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:08 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (1.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.3ms)
+  Rendered staffs/index.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:08 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:09 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (1.6ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (3.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:19 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.6ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.3ms)
+  Rendered staffs/index.html.erb within layouts/application (5.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:48:20 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:21 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.2ms)
+  Rendered staffs/index.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:48:21 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.3ms)
+  Rendered staffs/index.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.3ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.0ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered staffs/_staff.html.erb (0.1ms)
+  Rendered staffs/index.html.erb within layouts/application (8.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 38ms (Views: 29.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:52:09 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 14:53:58 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.1ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.1ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered staffs/_staff.html.erb (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (7.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 40ms (Views: 32.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 14:53:59 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (1.8ms)
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.7ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered staffs/_staff.html.erb (0.4ms)
+  Rendered staffs/index.html.erb within layouts/application (8.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:03:42 +0800
+  [1m[36mStaff Load (0.5ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  ORDER BY "staffs"."id" DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE ("staffs"."email" = 'really@test.com' AND "staffs"."id" != 5) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "staffs" SET "name" = $1, "updated_at" = $2 WHERE "staffs"."id" = $3  [["name", nil], ["updated_at", "2016-10-05 07:05:53.781478"], ["id", 5]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:05:57 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.4ms)
+  [1m[35mStaff Load (0.1ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.1ms)
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (6.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:05:57 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:05:57 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:05:57 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:05:57 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:05:58 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:06:22 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.9ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.3ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:22 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:22 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:22 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:22 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:22 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:22 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:23 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:06:47 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (1.1ms)
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.2ms)
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:06:48 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.4ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (1.2ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.2ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (5.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:07:39 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:08:27 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (1.1ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.3ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (6.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:08:27 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:08:27 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:08:27 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:27 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:08:28 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.5ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (1.1ms)
+  [1m[35mStaff Load (0.4ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.3ms)
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (6.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:10:45 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (1.5ms)
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.2ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (6.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:11:01 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:14:21 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (0.8ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.3ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:14:22 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:15:33 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Johnny"]]
+  [1m[36mStaff Load (0.7ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Crane"]]
+  Rendered staffs/_staff.html.erb (23.8ms)
+  Rendered staffs/index.html.erb within layouts/application (25.5ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.2ms)
+
+ActionView::Template::Error (undefined method `buton_tag' for #<#<Class:0x007fde32a5cd38>:0x007fde318d51f0>
+Did you mean?  button_tag):
+    2: 	<td>
+    3: 		Staff : <%=staff.name%>	
+    4: 	</td>
+    5: 	<td style="color:red"><%=buton_tag "Warning!" if staff.attributes.values.include? nil%></td>
+    6: </tr>
+    7:  
+  app/views/staffs/_staff.html.erb:5:in `_app_views_staffs__staff_html_erb__1897668490059784247_70296145256820'
+  app/views/staffs/index.html.erb:11:in `_app_views_staffs_index_html_erb___182567797028550733_70296152447200'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.7ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered staffs/_staff.html.erb (0.9ms)
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.4ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:17:06 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:21:27 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered staffs/_staff.html.erb (0.9ms)
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.3ms)
+  [1m[35mStaff Load (0.1ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 75ms (Views: 73.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-3fcd87a7c140374bf7128c68b0a6c2491a5e9b14b725fe713f8d6ebda897f449.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:28 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-05 15:21:46 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered staffs/_staff.html.erb (0.5ms)
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1[0m  [["name", "Johnny"]]
+  Rendered staffs/_staff.html.erb (0.3ms)
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs" WHERE "staffs"."name" = $1  [["name", "Crane"]]
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "db89b3209a2ebbfa3799c78de4112c2f3a03c7bd"]]
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800

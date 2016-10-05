@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004021729) do
+ActiveRecord::Schema.define(version: 20161005061708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "available_leave_remainings", force: :cascade do |t|
+    t.float   "number_of_days", default: 0.0
+    t.integer "leave_id"
+    t.integer "contract_id"
+  end
+
+  create_table "contracts", force: :cascade do |t|
+    t.integer  "staff_id"
+    t.integer  "department_id"
+    t.string   "job_title"
+    t.float    "salary"
+    t.datetime "commencement_date"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +48,12 @@ ActiveRecord::Schema.define(version: 20161004021729) do
 
   add_index "invites", ["id", "email"], name: "index_invites_on_id_and_email", using: :btree
   add_index "invites", ["id", "invite_code"], name: "index_invites_on_id_and_invite_code", using: :btree
+
+  create_table "leaves", force: :cascade do |t|
+    t.string   "leave_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.string   "name"
