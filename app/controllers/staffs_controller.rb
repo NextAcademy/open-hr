@@ -11,12 +11,17 @@
 		if @staff.save
 			invite= Invite.create(email:@staff.email)
 			invite.invite!
-			#send email invitation to staff for email creation
-
 			redirect_to	send_invitation_url(invite.id)
 		else
 	    	render template: "staffs/new"
 		end
+	end
+
+	def index
+		@staffs = Staff.all
+		@active_staffs = Staff.where(name:"Johnny")
+		@inactive_staffs = Staff.where(name:"Crane")
+		#possible to run ajax for asynchrous index display
 	end
 
 	private
