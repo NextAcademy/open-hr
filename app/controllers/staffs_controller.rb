@@ -1,4 +1,4 @@
-	class StaffsController < ApplicationController
+class StaffsController < ApplicationController
 		before_action :set_staff, only: [:edit, :update, :show]
 	def new
 		@staff = Staff.new()

@@ -1,4 +1,5 @@
 class DepartmentsController < ApplicationController
+	before_action :set_department, only: [:edit, :update]
 	def new
 		@department = Department.new()
 		authorize @department
@@ -15,8 +16,24 @@ class DepartmentsController < ApplicationController
 		end
 	end
 
+	def index
+		@departments = Department.all	
+	end
+
+	def edit
+	end
+
+	def update
+		@department.update(department_params)
+		redirect_to root_path
+	end
+
 	private
 	def department_params
 		params.require(:department).permit(:name,:head_of_department)
+	end
+
+	def set_department
+		@department = Department.find(params[:id])
 	end
 end

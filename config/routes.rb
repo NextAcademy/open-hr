@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :staffs, controller: "staffs"
-  resources :departments, controller: "departments", only: [:new,:create]
+  resources :departments, controller: "departments"
 
   get '/send_invitation/:id' => 'invites#send_invitation', :as => 'send_invitation' 
   match '/signup/:invite_code' => 'users#new', :as => 'redeem_invitation', via: [:get, :post]

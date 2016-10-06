@@ -25597,3 +25597,1605 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:28:05 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+Processing by SessionsController#new as HTML
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 16ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:28:05 +0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "new"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  Rendered users/_form.html.erb (18.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  Rendered users/new.html.erb within layouts/application (34.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+Completed 200 OK in 249ms (Views: 237.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-10-06 14:28:08 +0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"testatester37@gmail.com", "password"=>"[FILTERED]", "category"=>"admin"}, "commit"=>"Sign up"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "new"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'testatester37@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "category", "created_at", "updated_at", "remember_token") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "testatester37@gmail.com"], ["encrypted_password", "$2a$10$zHYokRZlERvmqClV4gQar.PaXDGbHfHkw8cT7WCBDfJQFtc1Q486G"], ["category", 0], ["created_at", "2016-10-06 06:28:08.158990"], ["updated_at", "2016-10-06 06:28:08.158990"], ["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35m (2.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 112ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:28:08 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+Processing by SessionsController#new as HTML
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  Rendered sessions/_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "6779fc71a3e06882943cf7760b1774af1114ce33"]]
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-10-06 14:28:09 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"testatester37@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "testatester37@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 84ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:28:09 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:29:12 +0800
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-06 14:29:15 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mContract Load (0.7ms)[0m  [1mSELECT "contracts".* FROM "contracts" WHERE (end_date>'2016-10-06 06:29:15.464930')[0m
+  [1m[35mStaff Load (0.5ms)[0m  SELECT "staffs".* FROM "staffs"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered collection (0.0ms)
+  Rendered collection (0.0ms)
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 52ms (Views: 25.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:29:18 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.4ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered collection (0.0ms)
+  Rendered departments/index.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-10-06 14:30:03 +0800
+Processing by DepartmentsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered departments/_form.html.erb (2.7ms)
+  Rendered departments/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 59ms (Views: 47.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+Processing by DepartmentsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered departments/_form.html.erb (1.1ms)
+  Rendered departments/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:20 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:21 +0800
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2016-10-06 14:30:23 +0800
+Processing by StaffsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered staffs/_form.html.erb (1.3ms)
+  Rendered staffs/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 41ms (Views: 24.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:24 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-10-06 14:30:24 +0800
+Processing by DepartmentsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered departments/_form.html.erb (1.2ms)
+  Rendered departments/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:25 +0800
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-06 14:30:26 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mContract Load (0.4ms)[0m  SELECT "contracts".* FROM "contracts" WHERE (end_date>'2016-10-06 06:30:26.561319')
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered collection (0.0ms)
+  Rendered collection (0.0ms)
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:27 +0800
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:30:28 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.2ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered collection (0.0ms)
+  Rendered departments/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:29 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:30 +0800
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:30:41 +0800
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:30:42 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[35mDepartment Load (0.3ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered collection (0.0ms)
+  Rendered departments/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:43 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:30:47 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.3ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered collection (0.0ms)
+  Rendered departments/index.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:49 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-10-06 14:30:50 +0800
+Processing by DepartmentsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered departments/_form.html.erb (1.3ms)
+  Rendered departments/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/departments" for 127.0.0.1 at 2016-10-06 14:30:53 +0800
+Processing by DepartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "department"=>{"name"=>"Marketing", "head_of_department"=>""}, "commit"=>"Create Department"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'Marketing' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "departments" ("name", "head_of_department", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Marketing"], ["head_of_department", ""], ["created_at", "2016-10-06 06:30:53.237436"], ["updated_at", "2016-10-06 06:30:53.237436"]]
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:53 +0800
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-10-06 14:30:55 +0800
+Processing by DepartmentsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered departments/_form.html.erb (1.1ms)
+  Rendered departments/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/departments" for 127.0.0.1 at 2016-10-06 14:30:58 +0800
+Processing by DepartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "department"=>{"name"=>"Engineering", "head_of_department"=>""}, "commit"=>"Create Department"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.6ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'Engineering' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "departments" ("name", "head_of_department", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Engineering"], ["head_of_department", ""], ["created_at", "2016-10-06 06:30:58.345757"], ["updated_at", "2016-10-06 06:30:58.345757"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:30:58 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-10-06 14:30:59 +0800
+Processing by DepartmentsController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered departments/_form.html.erb (0.7ms)
+  Rendered departments/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/departments" for 127.0.0.1 at 2016-10-06 14:31:02 +0800
+Processing by DepartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "department"=>{"name"=>"Spec Ops", "head_of_department"=>""}, "commit"=>"Create Department"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'Spec Ops' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "departments" ("name", "head_of_department", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Spec Ops"], ["head_of_department", ""], ["created_at", "2016-10-06 06:31:02.380272"], ["updated_at", "2016-10-06 06:31:02.380272"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:31:02 +0800
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:31:03 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.3ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered departments/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (Missing partial departments/_department with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/chan/Desktop/NA_Work/open_hr/app/views"
+  * "/home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/clearance-1.14.1/app/views"
+):
+    1: <table>
+    2: 	<%= render @departments%>	
+    3: </table>
+    4: 
+    5: 
+  app/views/departments/index.html.erb:2:in `_app_views_departments_index_html_erb___105961396998499729_70231614706320'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.0ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[35mDepartment Load (1.0ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered departments/_department.html.erb (0.7ms)
+  Rendered departments/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:15 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:16 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:32:16 +0800
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:32:52 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[35mDepartment Load (0.3ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered departments/_department.html.erb (7.7ms)
+  Rendered departments/index.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `stringify_keys' for "/departments/1/edit":String):
+     6: 	<td>
+     7: 		<%=department.head_of_department%>
+     8: 	</td>
+     9: 	<%= link_to "Edit", link_to, edit_department_path(department)%>
+    10: </tr>
+  app/views/departments/_department.html.erb:9:in `_app_views_departments__department_html_erb___1531844342583759953_70231650003340'
+  app/views/departments/index.html.erb:2:in `_app_views_departments_index_html_erb___105961396998499729_70231614706320'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.6ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.3ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered departments/_department.html.erb (1.2ms)
+  Rendered departments/index.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:06 +0800
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.3ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered departments/_department.html.erb (0.9ms)
+  Rendered departments/index.html.erb within layouts/application (2.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:33:18 +0800
+
+
+Started GET "/departments/1/edit" for 127.0.0.1 at 2016-10-06 14:33:20 +0800
+Processing by DepartmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartment Load (0.2ms)[0m  [1mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered departments/_form.html.erb (1.4ms)
+  Rendered departments/edit.html.erb within layouts/application (6.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/departments/1" for 127.0.0.1 at 2016-10-06 14:33:25 +0800
+Processing by DepartmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "department"=>{"name"=>"Marketing", "head_of_department"=>"Tommy"}, "commit"=>"Update Department", "id"=>"1"}
+  [1m[36mDepartment Load (0.4ms)[0m  [1mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+ActionView::MissingTemplate (Missing template departments/update, application/update with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/chan/Desktop/NA_Work/open_hr/app/views"
+  * "/home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/clearance-1.14.1/app/views"
+):
+  actionview (4.2.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.6) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.6) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.6) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.6) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.6) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  clearance (1.14.1) lib/clearance/rack_session.rb:23:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/chan/.rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (20.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (34.9ms)
+
+
+Started PATCH "/departments/1" for 127.0.0.1 at 2016-10-06 14:34:27 +0800
+Processing by DepartmentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "department"=>{"name"=>"Marketing", "head_of_department"=>"Tommy"}, "commit"=>"Update Department", "id"=>"1"}
+  [1m[35mDepartment Load (0.4ms)[0m  SELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.4ms)[0m  SELECT  1 AS one FROM "departments" WHERE ("departments"."name" = 'Marketing' AND "departments"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "departments" SET "head_of_department" = $1, "updated_at" = $2 WHERE "departments"."id" = $3[0m  [["head_of_department", "Tommy"], ["updated_at", "2016-10-06 06:34:27.784253"], ["id", 1]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:34:27 +0800
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:34:31 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[35mDepartment Load (0.3ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered departments/_department.html.erb (1.0ms)
+  Rendered departments/index.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:38:48 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[35mDepartment Load (0.3ms)[0m  SELECT "departments".* FROM "departments"
+  Rendered departments/_department.html.erb (0.5ms)
+  Rendered departments/index.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 34ms (Views: 27.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:38:49 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:38:50 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-06 14:38:52 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mContract Load (0.3ms)[0m  [1mSELECT "contracts".* FROM "contracts" WHERE (end_date>'2016-10-06 06:38:52.648636')[0m
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered collection (0.0ms)
+  Rendered collection (0.0ms)
+  Rendered collection (0.0ms)
+  Rendered staffs/index.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 50ms (Views: 33.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:38:54 +0800
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:38:55 +0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "new"]]
+  Rendered users/_invite_form.html.erb (4.8ms)
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.6ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <div class="text-field">
+    2:   <%= invite_form.label :email %>
+    3:   <%= invite_form.text_field :email, value:@invite.email ,type: 'email', :readonly => true%>
+    4: </div>
+    5: 
+    6: <div class="password-field">
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb__2279303232701410880_70231607568260'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__2154741776660743513_47190764585400'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__2154741776660743513_47190764585400'
+  app/controllers/users_controller.rb:8:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.9ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.3ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2016-10-06 14:39:03 +0800
+Processing by StaffsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered staffs/_form.html.erb (1.0ms)
+  Rendered staffs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 35ms (Views: 23.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/staffs" for 127.0.0.1 at 2016-10-06 14:39:13 +0800
+Processing by StaffsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "staff"=>{"email"=>"staff_test_1@gmail.com", "name"=>"Staff_Test_1"}, "commit"=>"Create Staff"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'staff_test_1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "staffs" ("email", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "staff_test_1@gmail.com"], ["name", "Staff_Test_1"], ["created_at", "2016-10-06 06:39:13.546139"], ["updated_at", "2016-10-06 06:39:13.546139"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "invites" ("email") VALUES ($1) RETURNING "id"  [["email", "staff_test_1@gmail.com"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "invites" SET "invite_code" = $1, "invited_at" = $2 WHERE "invites"."id" = $3[0m  [["invite_code", "f1e004fc1175d0daefb4fe76daa27de6faa27dc3"], ["invited_at", "2016-10-06 06:39:13.558951"], ["id", 1]]
+  [1m[35m (3.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/send_invitation/1
+Completed 302 Found in 27ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/send_invitation/1" for 127.0.0.1 at 2016-10-06 14:39:13 +0800
+Processing by InvitesController#send_invitation as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_invitation at /home/chan/Desktop/NA_Work/open_hr/app/controllers/invites_controller.rb:5)
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (0.6ms)
+  Rendered invitation_mailer/invite.text.erb within layouts/mailer (0.3ms)
+
+InvitationMailer#invite: processed outbound mail in 145.3ms
+
+Sent mail to staff_test_1@gmail.com (3988.1ms)
+Date: Thu, 06 Oct 2016 14:39:13 +0800
+From: testatester37@gmail.com
+To: staff_test_1@gmail.com
+Message-ID: <57f5f191b5856_6cd83fe01293650c284a2@chan-UX303LN.mail>
+Subject: Welcome to the Company!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_57f5f191b3806_6cd83fe01293650c283a0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_57f5f191b3806_6cd83fe01293650c283a0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+InvitationMailer#invite
+
+, find me in app/views/invitation_mailer/invite.text.erb
+
+
+----==_mimepart_57f5f191b3806_6cd83fe01293650c283a0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <h1>Invitation to Sign Up</h1>
+
+<p> Please click on the link below and fill in the required fields to sign up a company account.</p>
+
+<p>
+http://127.0.0.1:3000/signup/f1e004fc1175d0daefb4fe76daa27de6faa27dc3
+</p>
+
+  </body>
+</html>
+
+----==_mimepart_57f5f191b3806_6cd83fe01293650c283a0--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 4151ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:39:17 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments" for 127.0.0.1 at 2016-10-06 14:39:51 +0800
+Processing by DepartmentsController#index as HTML
+  [1m[36mDepartment Load (0.3ms)[0m  [1mSELECT "departments".* FROM "departments"[0m
+  Rendered departments/_department.html.erb (0.7ms)
+  Rendered departments/index.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-06 14:39:56 +0800
+Processing by StaffsController#index as HTML
+  [1m[36mContract Load (0.4ms)[0m  [1mSELECT "contracts".* FROM "contracts" WHERE (end_date>'2016-10-06 06:39:56.649316')[0m
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  Rendered staffs/_staff.html.erb (1.2ms)
+  Rendered collection (0.0ms)
+  Rendered staffs/_staff.html.erb (0.6ms)
+  Rendered staffs/index.html.erb within layouts/application (4.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/staffs/1" for 127.0.0.1 at 2016-10-06 14:39:59 +0800
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered staffs/show.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:40:03 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/departments/new" for 127.0.0.1 at 2016-10-06 14:40:04 +0800
+Processing by DepartmentsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  Rendered departments/_form.html.erb (1.4ms)
+  Rendered departments/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:40:06 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2016-10-06 14:40:07 +0800
+Processing by StaffsController#index as HTML
+  [1m[35mContract Load (0.9ms)[0m  SELECT "contracts".* FROM "contracts" WHERE (end_date>'2016-10-06 06:40:07.626937')
+  [1m[36mStaff Load (0.4ms)[0m  [1mSELECT "staffs".* FROM "staffs"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered staffs/_staff.html.erb (0.7ms)
+  Rendered collection (0.0ms)
+  Rendered staffs/_staff.html.erb (0.6ms)
+  Rendered staffs/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/staffs/1" for 127.0.0.1 at 2016-10-06 14:40:08 +0800
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStaff Load (0.3ms)[0m  SELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered staffs/show.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:40:11 +0800
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:40:52 +0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "new"]]
+  Rendered users/_invite_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <div class="text-field">
+    2:   <%= invite_form.label :email %>
+    3:   <%= invite_form.text_field :email, value:@invite.email ,type: 'email', :readonly => true%>
+    4: </div>
+    5: 
+    6: <div class="password-field">
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb__2279303232701410880_70231607568260'
+  app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__2154741776660743513_47190764585400'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__2154741776660743513_47190764585400'
+  app/controllers/users_controller.rb:8:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:41:49 +0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "new"]]
+  Rendered users/_invite_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (90374.7ms)
+Completed 500 Internal Server Error in 90387ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: <div class="text-field">
+    2:   <%= invite_form.label :email %>
+    3:   <%= invite_form.text_field :email, value:@invite.email ,type: 'email', :readonly => true%>
+    4: </div>
+    5: 
+    6: <div class="password-field">
+  app/views/users/_invite_form.html.erb:3:in `_app_views_users__invite_form_html_erb__2279303232701410880_70231607568260'
+  app/views/users/new.html.erb:9:in `block in _app_views_users_new_html_erb__2154741776660743513_70231610713840'
+  app/views/users/new.html.erb:4:in `_app_views_users_new_html_erb__2154741776660743513_70231610713840'
+  app/controllers/users_controller.rb:8:in `new'
+
+
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.0ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/chan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:43:20 +0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "new"]]
+  Rendered users/_form.html.erb (1.3ms)
+  Rendered users/new.html.erb within layouts/application (737.3ms)
+Completed 200 OK in 772ms (Views: 764.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:43:21 +0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.1ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "new"]]
+  Rendered users/_form.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/application (10641.8ms)
+Completed 200 OK in 10666ms (Views: 10662.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:43:31 +0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.1ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "new"]]
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:31 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:31 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:32 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "new"]]
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:35 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "new"]]
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:43:38 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:43:43 +0800
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:43:45 +0800
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1  [["category", 0]]
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "new"]]
+  Rendered users/_form.html.erb (1.4ms)
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 42ms (Views: 37.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."category" = $1 LIMIT 1[0m  [["category", 0]]
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1  [["invite_code", "new"]]
+  Rendered users/_form.html.erb (1.6ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 36ms (Views: 30.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:44:01 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:44:02 +0800
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:03 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "2592c4d2e1a266c040fdc21e4c63c57646d8072d"]]
+Processing by UsersController#dashboard as HTML
+  Rendered users/dashboard.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/admin.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/department.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/human_resources.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/invites.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:26 +0800
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:27 +0800
+
+
+Started GET "/assets/department.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:27 +0800
+
+
+Started GET "/assets/human_resources.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:27 +0800
+
+
+Started GET "/assets/invites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:27 +0800
+
+
+Started GET "/assets/staff_warning_alert.self-1d6a6ae1aefa1b4ca3a64e3f971dfa064aa26cb9f7e0d7b1c3e8a99c6e02e6f2.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:27 +0800
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:27 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-06 14:45:27 +0800
