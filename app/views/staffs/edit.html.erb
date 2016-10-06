@@ -1,0 +1,12 @@
+<%= @staff.name%>
+
+
+  <%= form_for @staff do |form| %>
+    <%= render partial: '/staffs/edit_form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+
