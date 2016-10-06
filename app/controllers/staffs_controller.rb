@@ -38,6 +38,7 @@ class StaffsController < ApplicationController
 	end
 
 	def show
+		@contract = @staff.contracts
 	end
 
 	private
