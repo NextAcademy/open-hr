@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20161006053800) do
     t.float    "salary"
     t.datetime "commencement_date"
     t.datetime "end_date"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "status",             default: 0
+    t.json     "contract_documents"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "departments", force: :cascade do |t|
@@ -56,11 +58,11 @@ ActiveRecord::Schema.define(version: 20161006053800) do
     t.integer  "staff_id"
     t.integer  "leave_type_id"
     t.text     "description"
-    t.string   "status"
+    t.integer  "status",        default: 0
     t.date     "start_date"
     t.date     "end_date"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "leave_types", force: :cascade do |t|

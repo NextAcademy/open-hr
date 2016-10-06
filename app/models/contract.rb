@@ -4,5 +4,11 @@ class Contract < ActiveRecord::Base
 	has_many :leave_types,through: :available_remaining_leaves
 	has_many :available_remaining_leaves, class_name:"AvailableRemainingLeave", foreign_key:"contract_id"
 
-	  mount_uploaders :contract_documents, ContractDocumentUploader
+	mount_uploaders :contract_documents, ContractDocumentUploader
+
+  enum status: {
+    'inactive': 0,
+    'active': 1
+  }
+
 end
