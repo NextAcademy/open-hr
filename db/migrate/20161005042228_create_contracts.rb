@@ -7,7 +7,7 @@ class CreateContracts < ActiveRecord::Migration
       t.float		:salary
       t.datetime	:commencement_date
       t.datetime  :end_date
-
+      t.json      :contract_documents
       t.timestamps null: false
     end
   end
