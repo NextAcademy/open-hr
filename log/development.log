@@ -30864,3 +30864,7 @@ Processing by StaffsController#show as HTML
   Rendered staffs/show.html.erb within layouts/application (4.9ms)
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "2bac8329619fc85eccdf439275a98b5b5d2eb44d"]]
 Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 2.3ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT "contracts"."job_title" FROM "contracts"[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM "users"
+  [1m[36m (0.9ms)[0m  [1mSELECT emai FROM "users"[0m
+  [1m[35m (0.5ms)[0m  SELECT "users"."email" FROM "users"
