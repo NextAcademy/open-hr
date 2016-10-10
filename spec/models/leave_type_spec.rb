@@ -27,7 +27,7 @@ RSpec.describe LeaveType, :type => :model do
 		it "is invalid with more than one true unpaid leave record" do
 			leave_type_true = LeaveType.new(leave_type_name:"Annual", unpaid_leave:true)
 			leave_type_true.save
-			leave_type_duplicate_true = LeaveType.new(leave_type_name:"Unpaid", unpaid_leave
+			leave_type_duplicate_true = LeaveType.new(leave_type_name:"Unpaid", unpaid_leave:true)
 			expect(leave_type_duplicate_true).to_not be_valid
 		end
 	end

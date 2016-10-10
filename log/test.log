@@ -602,3 +602,809 @@ InvitationMailer#invite: processed outbound mail in 0.2ms
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
   [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.7ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.3ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 03:58:47.272412"], ["updated_at", "2016-10-10 03:58:47.272412"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 03:58:47.280884"], ["updated_at", "2016-10-10 03:58:47.280884"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 03:58:47.305263"], ["updated_at", "2016-10-10 03:58:47.305263"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.8ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.2ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 03:58:54.888030"], ["updated_at", "2016-10-10 03:58:54.888030"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 03:58:54.895201"], ["updated_at", "2016-10-10 03:58:54.895201"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 03:58:54.921092"], ["updated_at", "2016-10-10 03:58:54.921092"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.8ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.1ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.2ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:01:23.636970"], ["updated_at", "2016-10-10 04:01:23.636970"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:01:23.646130"], ["updated_at", "2016-10-10 04:01:23.646130"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 04:01:23.670376"], ["updated_at", "2016-10-10 04:01:23.670376"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.9ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.3ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.1ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:02:02.600387"], ["updated_at", "2016-10-10 04:02:02.600387"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:02:02.607062"], ["updated_at", "2016-10-10 04:02:02.607062"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 04:02:02.636098"], ["updated_at", "2016-10-10 04:02:02.636098"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "category", "created_at", "updated_at", "remember_token") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["email", "test@test.com"], ["encrypted_password", "$2a$04$Zj3Podm7IlGk5e7rsGJLBOJBWO7hdkbMS6OnNnnsngqCBKTfTW67y"], ["category", nil], ["created_at", "2016-10-10 04:02:09.523641"], ["updated_at", "2016-10-10 04:02:09.523641"], ["remember_token", "5be97749fe99209e3f79e60ca9d16c213cdf1aef"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.8ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.1ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:05:11.535688"], ["updated_at", "2016-10-10 04:05:11.535688"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:05:11.543590"], ["updated_at", "2016-10-10 04:05:11.543590"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.4ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 04:05:11.578422"], ["updated_at", "2016-10-10 04:05:11.578422"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.8ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.3ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.4ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:05:41.819496"], ["updated_at", "2016-10-10 04:05:41.819496"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:05:41.826797"], ["updated_at", "2016-10-10 04:05:41.826797"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 04:05:41.855982"], ["updated_at", "2016-10-10 04:05:41.855982"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 1.3ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.2ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:06:20.361753"], ["updated_at", "2016-10-10 04:06:20.361753"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:06:20.369565"], ["updated_at", "2016-10-10 04:06:20.369565"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 04:06:20.400645"], ["updated_at", "2016-10-10 04:06:20.400645"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 1.0ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.2ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:12:21.126438"], ["updated_at", "2016-10-10 04:12:21.126438"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.1ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:12:21.134201"], ["updated_at", "2016-10-10 04:12:21.134201"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 04:12:21.161036"], ["updated_at", "2016-10-10 04:12:21.161036"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 1.6ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.3ms
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.2ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:12:32.170622"], ["updated_at", "2016-10-10 04:12:32.170622"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.5ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:12:32.181280"], ["updated_at", "2016-10-10 04:12:32.181280"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 04:12:32.226713"], ["updated_at", "2016-10-10 04:12:32.226713"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStaff Exists (1.7ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:20:35.007585"], ["updated_at", "2016-10-10 04:20:35.007585"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.7ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:20:35.016967"], ["updated_at", "2016-10-10 04:20:35.016967"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 04:20:53.204929"], ["updated_at", "2016-10-10 04:20:53.204929"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.8ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 04:20:53.213013"], ["updated_at", "2016-10-10 04:20:53.213013"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
