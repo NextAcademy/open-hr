@@ -42,6 +42,8 @@ group :development, :test do
   gem 'byebug'
   gem "rspec-rails"
   gem "factory_girl_rails"
+  gem 'guard-rspec', require: false
+  gem 'shoulda-matchers'
 end
 
 group :development do
