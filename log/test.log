@@ -2801,3 +2801,462 @@ InvitationMailer#invite: processed outbound mail in 0.2ms
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "bfefb1e8c11f68e58eee7ea4e58f7b221739bd22"]]
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.9ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.2ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mInvite Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mInvite Load (0.5ms)[0m  SELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "invites" DEFAULT VALUES RETURNING "id"
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invites" SET "email" = $1 WHERE "invites"."id" = $2[0m  [["email", "an arbitrary value"], ["id", 122]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "27718b7305b5584cbb9ba7525decbedd1de5fb40"], ["invited_at", "2016-10-10 07:08:04.627830"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "27718b7305b5584cbb9ba7525decbedd1de5fb40"], ["invited_at", "2016-10-10 07:08:04.632589"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invited_at") VALUES ($1, $2) RETURNING "id"[0m  [["email", "test1@test.com"], ["invited_at", "2016-10-10 07:08:04.636094"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code") VALUES ($1, $2) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "27718b7305b5584cbb9ba7525decbedd1de5fb40"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "invites" ("email", "redeemed_at") VALUES ($1, $2) RETURNING "id"[0m  [["email", "test1@test.com"], ["redeemed_at", "2016-10-10 07:08:04.643588"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "27718b7305b5584cbb9ba7525decbedd1de5fb40"], ["invited_at", "2016-10-10 07:08:04.649356"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.4ms)[0m  SELECT  1 AS one FROM "invites" WHERE ("invites"."email" = 'test1@test.com' AND "invites"."id" != 128) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2[0m  [["redeemed_at", "2016-10-10 07:08:04.652445"], ["id", 128]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "8e09ca90187fc1dd465d372be19ce8ab0364bc50"], ["invited_at", "2016-10-10 07:08:04.656412"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'john@john.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "john@john.com"], ["invite_code", "43f8f508bb639617c738f16be763dc874e55e33b"], ["invited_at", "2016-10-10 07:08:04.659409"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "8e09ca90187fc1dd465d372be19ce8ab0364bc50"]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (1.0ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 07:08:04.684142"], ["updated_at", "2016-10-10 07:08:04.684142"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 07:08:04.692045"], ["updated_at", "2016-10-10 07:08:04.692045"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.3ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1
+  [1m[36mLeaveType Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.5ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 07:08:04.726887"], ["updated_at", "2016-10-10 07:08:04.726887"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.2ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.8ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+
+InvitationMailer#invite: processed outbound mail in 0.2ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDepartment Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "departments" WHERE "departments"."name" = 'John' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mDepartment Exists (0.2ms)[0m  SELECT  1 AS one FROM "departments" WHERE "departments"."name" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mInvite Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mInvite Load (0.7ms)[0m  SELECT  "invites".* FROM "invites"  ORDER BY "invites"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "invites" DEFAULT VALUES RETURNING "id"
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "invites" SET "email" = $1 WHERE "invites"."id" = $2[0m  [["email", "an arbitrary value"], ["id", 131]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.5ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "52115590fcae6d7538caa12ab849111206ba450a"], ["invited_at", "2016-10-10 07:11:28.200516"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "52115590fcae6d7538caa12ab849111206ba450a"], ["invited_at", "2016-10-10 07:11:28.205320"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.4ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invited_at") VALUES ($1, $2) RETURNING "id"[0m  [["email", "test1@test.com"], ["invited_at", "2016-10-10 07:11:28.208842"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (1.8ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code") VALUES ($1, $2) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "52115590fcae6d7538caa12ab849111206ba450a"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.5ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "redeemed_at") VALUES ($1, $2) RETURNING "id"[0m  [["email", "test1@test.com"], ["redeemed_at", "2016-10-10 07:11:28.221827"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.4ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test1@test.com"], ["invite_code", "52115590fcae6d7538caa12ab849111206ba450a"], ["invited_at", "2016-10-10 07:11:28.227907"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.4ms)[0m  SELECT  1 AS one FROM "invites" WHERE ("invites"."email" = 'test1@test.com' AND "invites"."id" != 137) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invites" SET "redeemed_at" = $1 WHERE "invites"."id" = $2[0m  [["redeemed_at", "2016-10-10 07:11:28.232311"], ["id", 137]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "7f0d2dda31bc4ed11cf6b9f09d5a82bed641608c"], ["invited_at", "2016-10-10 07:11:28.237113"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'john@john.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "john@john.com"], ["invite_code", "da672ee43f06f0ca4aec29723a87911f329e5bdb"], ["invited_at", "2016-10-10 07:11:28.241718"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Load (0.5ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."invite_code" = $1 AND "invites"."redeemed_at" IS NULL  ORDER BY "invites"."id" ASC LIMIT 1[0m  [["invite_code", "7f0d2dda31bc4ed11cf6b9f09d5a82bed641608c"]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.5ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leave_types" ("leave_type_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["leave_type_name", "Annual"], ["created_at", "2016-10-10 07:11:28.265607"], ["updated_at", "2016-10-10 07:11:28.265607"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1[0m
+  [1m[35mLeaveType Exists (0.4ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Annual' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leave_types" ("leave_type_name", "unpaid_leave", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["leave_type_name", "Annual"], ["unpaid_leave", "t"], ["created_at", "2016-10-10 07:11:28.272473"], ["updated_at", "2016-10-10 07:11:28.272473"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLeaveType Exists (0.2ms)[0m  SELECT  1 AS one FROM "leave_types" WHERE "leave_types"."leave_type_name" = 'Unpaid' LIMIT 1
+  [1m[36mLeaveType Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "leave_types" WHERE "leave_types"."unpaid_leave" = 't' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStaff Exists (0.4ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStaff Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mStaff Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "staffs" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "John"], ["email", "test@gmail.com"], ["created_at", "2016-10-10 07:11:28.306232"], ["updated_at", "2016-10-10 07:11:28.306232"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStaff Exists (0.3ms)[0m  SELECT  1 AS one FROM "staffs" WHERE "staffs"."email" = 'test@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (3.3ms)
+
+InvitationMailer#invite: processed outbound mail in 19.9ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (0.7ms)
+
+InvitationMailer#invite: processed outbound mail in 1.5ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.6ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "d97eecbdbae21750e8de454ebd260487c1627a50"], ["invited_at", "2016-10-10 07:15:21.947813"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+InvitationMailer#invite: processed outbound mail in 2.1ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "d97eecbdbae21750e8de454ebd260487c1627a50"], ["invited_at", "2016-10-10 07:15:21.969628"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+InvitationMailer#invite: processed outbound mail in 1.1ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.7ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "37962d5728be42e68f500e6215cad89eb6347f4b"], ["invited_at", "2016-10-10 07:16:24.109197"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Load (0.3ms)[0m  [1mSELECT "invites".* FROM "invites"[0m
+
+InvitationMailer#invite: processed outbound mail in 1.7ms
+
+InvitationMailer#invite: processed outbound mail in 1.2ms
+
+InvitationMailer#invite: processed outbound mail in 1.5ms
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test@test.com"], ["invite_code", "856120622b485f45236df7d89d2780ca6878c4de"], ["invited_at", "2016-10-10 07:20:11.317452"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+InvitationMailer#invite: processed outbound mail in 1.0ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.6ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "c66ef0ebeb44572238ca1ae1a665cd95d7840df9"], ["invited_at", "2016-10-10 07:21:22.711860"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "c66ef0ebeb44572238ca1ae1a665cd95d7840df9"], ["invited_at", "2016-10-10 07:21:22.731523"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (1.0ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "77194ef7424ed68647cb0f6582293e0e5a286183"], ["invited_at", "2016-10-10 07:21:40.018837"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "6b8d2cf4aec3720547908c0760302dff6c6db9f6"], ["invited_at", "2016-10-10 07:21:46.233011"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (1.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "521be9c10c1c2ed1354dfb88d12fda8dee106ef2"], ["invited_at", "2016-10-10 07:22:40.026208"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+InvitationMailer#invite: processed outbound mail in 2.4ms
+
+InvitationMailer#invite: processed outbound mail in 1.2ms
+
+InvitationMailer#invite: processed outbound mail in 0.9ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.2ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "f67180847c4e6fa2a499fd5aa77a609681568249"], ["invited_at", "2016-10-10 07:22:55.065797"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+InvitationMailer#invite: processed outbound mail in 1.0ms
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.7ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "4f33ac921a0b6a4a8c8f8639f3b0181ba68745f5"], ["invited_at", "2016-10-10 07:23:56.942963"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+InvitationMailer#invite: processed outbound mail in 2.5ms
+
+InvitationMailer#invite: processed outbound mail in 1.1ms
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.3ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test1@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test1@test.com"], ["invite_code", "c56cbf67703bb35ccc29c8c9c7f53865f2325a03"], ["invited_at", "2016-10-10 07:25:56.518869"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+InvitationMailer#invite: processed outbound mail in 1.0ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test@test.com"], ["invite_code", "90d01575fa36f93bd9e5c1ccf09df926d1a1472b"], ["invited_at", "2016-10-10 07:26:02.287954"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+InvitationMailer#invite: processed outbound mail in 1.1ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mInvite Load (0.4ms)[0m  [1mSELECT "invites".* FROM "invites"[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test@test.com"], ["invite_code", "83b31eeb8f0138cb7f59906197399fc56088aba5"], ["invited_at", "2016-10-10 07:26:27.772959"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+InvitationMailer#invite: processed outbound mail in 1.4ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test@test.com"], ["invite_code", "83b31eeb8f0138cb7f59906197399fc56088aba5"], ["invited_at", "2016-10-10 07:26:27.795638"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+InvitationMailer#invite: processed outbound mail in 1.8ms
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.7ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "27a954e5fe0eaa24dbcb2aee3edc775d849f09f2"], ["invited_at", "2016-10-10 07:29:35.409486"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."email" = $1 LIMIT 1[0m  [["email", "test@test.com"]]
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (12.1ms)
+
+InvitationMailer#invite: processed outbound mail in 25.3ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test@test.com"], ["invite_code", "27a954e5fe0eaa24dbcb2aee3edc775d849f09f2"], ["invited_at", "2016-10-10 07:29:35.467606"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."email" = $1 LIMIT 1  [["email", "test@test.com"]]
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (1.1ms)
+
+InvitationMailer#invite: processed outbound mail in 2.0ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.6ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "06e7904154487e4b4b5e221809ea1627d2041b1c"], ["invited_at", "2016-10-10 07:30:57.586180"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."email" = $1 LIMIT 1[0m  [["email", "test@test.com"]]
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (3.8ms)
+
+InvitationMailer#invite: processed outbound mail in 16.5ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test@test.com"], ["invite_code", "06e7904154487e4b4b5e221809ea1627d2041b1c"], ["invited_at", "2016-10-10 07:30:57.623972"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mInvite Load (0.2ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."email" = $1 LIMIT 1  [["email", "test@test.com"]]
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (0.6ms)
+
+InvitationMailer#invite: processed outbound mail in 1.2ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mInvite Exists (0.8ms)[0m  SELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", "test@test.com"], ["invite_code", "5724f9fe75b5fe65351b46a5ef38ad6cf551b893"], ["invited_at", "2016-10-10 07:31:57.040266"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mInvite Load (0.2ms)[0m  [1mSELECT  "invites".* FROM "invites" WHERE "invites"."email" = $1 LIMIT 1[0m  [["email", "test@test.com"]]
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (1.5ms)
+  Rendered invitation_mailer/invite.text.erb within layouts/mailer (0.2ms)
+
+InvitationMailer#invite: processed outbound mail in 15.5ms
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mInvite Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invites" WHERE "invites"."email" = 'test@test.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "invites" ("email", "invite_code", "invited_at") VALUES ($1, $2, $3) RETURNING "id"  [["email", "test@test.com"], ["invite_code", "5724f9fe75b5fe65351b46a5ef38ad6cf551b893"], ["invited_at", "2016-10-10 07:31:57.086496"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mInvite Load (0.3ms)[0m  SELECT  "invites".* FROM "invites" WHERE "invites"."email" = $1 LIMIT 1  [["email", "test@test.com"]]
+  Rendered invitation_mailer/invite.html.erb within layouts/mailer (0.2ms)
+  Rendered invitation_mailer/invite.text.erb within layouts/mailer (0.0ms)
+
+InvitationMailer#invite: processed outbound mail in 2.2ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
