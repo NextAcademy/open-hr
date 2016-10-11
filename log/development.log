@@ -22433,6 +22433,7 @@ Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde4
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-10-05 15:21:47 +0800
+
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to AddMoreAttributesToStaffs (20161005080816)
   [1m[35m (0.1ms)[0m  BEGIN
