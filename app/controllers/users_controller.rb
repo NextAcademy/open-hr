@@ -46,8 +46,9 @@ class UsersController < Clearance::UsersController
 
 
 
-	private
 
+
+	private
 	def login_required
 		params[:invite_code]||= request.referrer.split("/").last if !request.referrer.nil?
 		redirect_to sign_in_path if !User.find_by(category:'admin').nil? && !signed_in? && Invite.find_by(invite_code:params[:invite_code]).nil?

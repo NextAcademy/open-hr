@@ -1,4 +1,5 @@
 $(document).on('ready', function(){
+
 	$('#filter_btn').click(function(){
 		var search_parameters = {date_from:$('#date_from').val(),date_to:$('#date_to').val()}
 		$.ajax({
@@ -24,8 +25,3 @@ $(document).on('ready', function(){
 	})
 })
 
-$(document).on('change', function(){
-	$('.warning').click(function(){
-		alert("Incomplete staff information")
-	})
-})

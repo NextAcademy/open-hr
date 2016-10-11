@@ -9,3 +9,6 @@ DASHBOARD
 <div><%= link_to "All staffs", staffs_path%></div>
 
 <div><%= link_to "All departments", departments_path%></div>
+
+
+<div><%= link_to "Settings", settings_path(current_user.category)%></div>

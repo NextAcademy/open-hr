@@ -1,5 +1,3 @@
-$(document).on('change', function(){
-	$('.warning').click(function(){
-		alert("Incomplete staff information")
-	})
+$(document).on('click', ' .warning', function(){
+	alert("Incomplete staff information")
 })

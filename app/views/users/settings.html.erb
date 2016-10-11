@@ -1,0 +1,53 @@
+<h1>Company Settings</h1>
+
+
+
+<%=form_tag(controller: "settings", action: "set_work_days", method: "post") do %>
+
+<table>
+	<thead>
+		<th></th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Wed</th>
+		<th>Thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+		<th>Sun</th>
+	</thead>
+	<tbody>
+		<tr id = "work_day">
+			<td>Work Days</td>
+			<% (1..7).to_a.each do |day| %>
+				  <%to_check = false%>
+				  <%to_check = true if @setting.rules["work_days"].include?(day.to_s)%>
+				  <%to_disable = false%>
+				  <%to_disable = true if @setting.rules["off_days"].include?(day.to_s)%>
+			      <td><%= check_box_tag 'work_days[]', day , nil , id:"day_#{day}",checked:to_check,disabled:to_disable%></td>
+			<% end %>
+		</tr>
+		<tr id = "half_day">
+			<td>Half Day?</td>
+			<% (1..7).to_a.each do |day| %>
+				  <%to_check = false%>
+				  <%to_check = true if @setting.rules["half_days"].include?(day.to_s)%>
+				  <%to_disable = true%>
+				  <%to_disable = false if @setting.rules["work_days"].include?(day.to_s)%>
+			      <td><%= check_box_tag 'half_days[]', day , nil , id:"day_#{day}",checked:to_check,disabled:to_disable %></td>
+			<% end %>
+		</tr>
+		<tr id = "off_day">
+			<td>Off Days</td>
+			<% (1..7).to_a.each do |day| %>
+				  <%to_check = false%>
+				  <%to_check = true if @setting.rules["off_days"].include?(day.to_s)%>
+				  <%to_disable = false%>
+				  <%to_disable = true if @setting.rules["work_days"].include?(day.to_s)%>
+			      <td><%= check_box_tag 'off_days[]', day , nil , id:"day_#{day}",checked:to_check, disabled:to_disable%></td>
+			<% end %>
+		</tr>
+	</tbody>
+</table>
+
+<%= submit_tag "Set Work Day"%>
+<%end%>
