@@ -1,0 +1,20 @@
+<%= @staff.name%>
+Show path
+
+<%=link_to "Add contracts", new_staff_contract_path(@staff)%>
+<br>
+
+<div><%@staff.contracts.each do |contract| %>
+	<div>
+	<%=contract.job_title%>
+	<%if contract.status == 'inactive'%>
+	<%= link_to "Activate",contract_activation_path(staff_id:@staff,id:contract.id),method:'post'%>
+	<%else%>
+	<%= link_to "Terminate",contract_termination_path(staff_id:@staff,id:contract.id),method:'post'%>
+	<%end%>
+	<%=link_to "Edit contract", edit_staff_contract_path(staff_id:@staff,id:contract.id)%>
+	</div>
+<%end%>
+</div>
+
+<div><%= link_to "Dashboard", root_path%></div>

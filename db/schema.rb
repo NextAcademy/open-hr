@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005061708) do
+ActiveRecord::Schema.define(version: 20161006053800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "available_leave_remainings", force: :cascade do |t|
-    t.float   "number_of_days", default: 0.0
-    t.integer "leave_id"
-    t.integer "contract_id"
+  create_table "available_remaining_leaves", force: :cascade do |t|
+    t.integer  "contract_id"
+    t.integer  "leave_type_id"
+    t.float    "number_of_days", default: 0.0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "contracts", force: :cascade do |t|
@@ -28,8 +30,11 @@ ActiveRecord::Schema.define(version: 20161005061708) do
     t.string   "job_title"
     t.float    "salary"
     t.datetime "commencement_date"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "end_date"
+    t.integer  "status",             default: 0
+    t.json     "contract_documents"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "departments", force: :cascade do |t|
@@ -49,17 +54,35 @@ ActiveRecord::Schema.define(version: 20161005061708) do
   add_index "invites", ["id", "email"], name: "index_invites_on_id_and_email", using: :btree
   add_index "invites", ["id", "invite_code"], name: "index_invites_on_id_and_invite_code", using: :btree
 
-  create_table "leaves", force: :cascade do |t|
-    t.string   "leave_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "leave_applications", force: :cascade do |t|
+    t.integer  "staff_id"
+    t.integer  "leave_type_id"
+    t.text     "description"
+    t.integer  "status",        default: 0
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "leave_types", force: :cascade do |t|
+    t.string   "leave_type_name"
+    t.boolean  "unpaid_leave",    default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "staffs", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "full_name"
+    t.string   "identification_number"
+    t.string   "contact_number"
+    t.string   "address"
+    t.datetime "date_of_birth"
+    t.json     "identification_documents"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,5 +97,14 @@ ActiveRecord::Schema.define(version: 20161005061708) do
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+
+  create_table "workdays", force: :cascade do |t|
+    t.date     "workdate"
+    t.float    "full_or_half"
+    t.boolean  "holiday"
+    t.string   "holiday_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
 end

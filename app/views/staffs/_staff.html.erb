@@ -1,10 +1,12 @@
 <tr>
 	<td>
-		Staff : <%=staff.name%>	
+		Staff : <%= link_to staff.name, staff_path(staff)%>
 	</td>
-
+	<td>
+		<%=link_to "Edit", edit_staff_path(staff)%>
+	</td>
 	<td style="color:red">
 		<%=button_tag "Warning!", class:"warning" if staff.attributes.values.include? nil%>
 	</td>
 </tr>
- 
+

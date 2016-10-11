@@ -19,12 +19,16 @@ Rails.application.routes.draw do
     root to: 'sessions#new'
   end
 
-  resources :staffs, controller: "staffs", only: [:new,:create,:index,:edit]
-  resources :departments, controller: "departments", only: [:new,:create]
-
+  resources :staffs, controller: "staffs" do
+    resources :contracts,
+      controller: "contracts",
+      only: [:new,:create,:edit,:update]
+  end
+  resources :departments, controller: "departments"
   get '/send_invitation/:id' => 'invites#send_invitation', :as => 'send_invitation' 
   match '/signup/:invite_code' => 'users#new', :as => 'redeem_invitation', via: [:get, :post]
-
+  post '/staffs/:staff_id/contracts/:id/terminate' => 'contracts#terminate', :as => "contract_termination"
+  post '/staffs/:staff_id/contracts/:id/activate' => 'contracts#activate', :as => "contract_activation"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

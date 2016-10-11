@@ -2,10 +2,9 @@ require 'digest/sha1'
 
 class Invite < ActiveRecord::Base
   
-  validates_presence_of :email, :on => :save, :message => "can't be blank"
-  validates_uniqueness_of :email, :on => :save, :message => "is already registered"
+  validates_presence_of :email
+  validates_uniqueness_of :email
 
-  # named_scope :unsent_invitations, :conditions => {:redeemed_at => nil, :invite_code => nil}
 
   def invited?
     !!self.invite_code && !!self.invited_at

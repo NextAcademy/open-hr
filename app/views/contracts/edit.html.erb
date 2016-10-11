@@ -1,0 +1,11 @@
+
+  <%= form_for [@staff,@contract] do |form| %>
+    <%= render partial: '/contracts/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+
+<%= link_to "Dashboard", root_path%>

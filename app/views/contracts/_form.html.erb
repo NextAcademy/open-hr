@@ -1,0 +1,25 @@
+<div class="text-field">
+  <%= form.label :job_title %>
+  <%= form.text_field :job_title %>
+</div>
+
+<div class="text-field">
+  <%= form.label :salary %>
+  <%= form.number_field :salary, step:"any" %>
+</div>
+
+<div class="text-field">
+  <%= form.label :commencement_date%>
+  <%= form.text_field :commencement_date %>
+</div>
+
+<div class="text-field">
+  <%= form.label :end_date %>
+  <%= form.text_field :end_date %>
+</div>
+
+<div class="text-field">
+  <%= form.label :contract_document %>
+  <%= form.file_field :contract_documents, multiple: true %>
+</div>
+
