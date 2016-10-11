@@ -21,11 +21,16 @@ class StaffsController < ApplicationController
 	def index
 		@staffs = Staff.all
 		@active_staffs = []		
-		Contract.where("end_date>?", Time.now).each do |contract|
-			@active_staffs<< Staff.find(contract.staff_id)
-		end 
+		Contract.where(status:1).each do |contract|
+			@active_staffs << Staff.find(contract.staff_id)
+		end
+
+		# Contract.where("end_date>?", Time.now).each do |contract|
+		# 	@active_staffs<< Staff.find(contract.staff_id)
+		# end 
 		@inactive_staffs = Staff.all-@active_staffs
-		#possible to run ajax for asynchrous index display
+
+		#possible to run ajax for asynchrous index display?
 	end
 
 	def edit
@@ -39,6 +44,18 @@ class StaffsController < ApplicationController
 
 	def show
 		@contract = @staff.contracts
+	end
+
+	def filter_staff_by_contracts
+		contracts = Contract.where("commencement_date > ? AND end_date < ?",params[:date_from],params[:date_to])
+		filtered_staffs = []
+		contracts.each do |contract|
+			staff = Staff.find(contract.staff_id)
+			filtered_staffs << [staff,staff.attributes.values.include?(nil)]
+		end
+
+		filtered_staffs
+		render :json => filtered_staffs
 	end
 
 	private

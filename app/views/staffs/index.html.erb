@@ -4,7 +4,10 @@
   <li class="active"><a data-toggle="tab" href="#home">All Staff</a></li>
   <li><a data-toggle="tab" href="#menu1">Active Staffs</a></li>
   <li><a data-toggle="tab" href="#menu2">Inactive Staffs</a></li>
+  <li><a data-toggle="tab" href="#menu3">Historical Filter</a></li>
 </ul>
+
+
 
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
@@ -15,6 +18,14 @@
   </div>
   <div id="menu2" class="tab-pane fade">
 	<table><%=render @inactive_staffs%></table>	
+  </div>
+  <div id ="menu3" class = "tab-pane fade">
+    <div>
+      From :<%=date_field :date, :from%>
+      To :<%=date_field :date, :to%>
+      <%=button_tag "Filter", id:"filter_btn"%>
+    </div>
+  <table id= "filter_result"></table>
   </div>
 </div>
 

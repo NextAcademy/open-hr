@@ -24,7 +24,6 @@ class ContractsController < ApplicationController
 	end
 
 	def activate
-		byebug
 		@contract.update(status:1)
 		redirect_to staff_path(@staff)
 	end
