@@ -29,6 +29,11 @@ Rails.application.routes.draw do
   match '/signup/:invite_code' => 'users#new', :as => 'redeem_invitation', via: [:get, :post]
   post '/staffs/:staff_id/contracts/:id/terminate' => 'contracts#terminate', :as => "contract_termination"
   post '/staffs/:staff_id/contracts/:id/activate' => 'contracts#activate', :as => "contract_activation"
+  post 'filter_staff_by_contracts' => 'staffs#filter_staff_by_contracts', :as => 'filter_staff_by_contracts'
+
+  get '/settings/:authority' => 'settings#show', as:'settings'
+  post '/set_work_days' => 'settings#set_work_days', as:'set_work_days'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
