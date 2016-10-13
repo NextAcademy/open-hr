@@ -2,12 +2,12 @@ class SettingsController < ApplicationController
 	before_action :set_setting
 	def show
 		@authority = params[:authority]
+		@leave_types = LeaveType.all
 		render template:"users/settings"
 	end
 
 
 	def set_work_days
-		byebug
 		original_setting_rules = @setting.rules
 		#improve this!
 		params[:work_days] = [] if params[:work_days] == nil
@@ -21,11 +21,27 @@ class SettingsController < ApplicationController
 		elsif last_day == nil || last_day < Date.today
 			Setting.create_work_day_entries(@setting.rules) 
 		else
-			byebug
 			Setting.update_work_day_entries(@setting.rules)
 		end
 
-		render template:"users/settings"
+		redirect_to settings_path(current_user.category)
+	end
+
+	def set_leave_type
+		leave_type=LeaveType.new(leave_type_params)
+
+		if leave_type.save
+			flash[:notice] = "You have successfully created a new leave type"
+		else
+			flash[:warning]= "Your leave type input was incorrect"
+		end
+
+		redirect_to settings_path(current_user.category)
+	end
+
+	def load_calendar
+		dates = Workday.all.pluck(:workdate)
+		render :json => dates
 	end
 
 	private
@@ -37,5 +53,9 @@ class SettingsController < ApplicationController
 		else
 			@setting=Setting.last
 		end
+	end
+
+	def leave_type_params
+		params.require(:leave_type).permit(:leave_type_name,:default_amount,:unpaid_leave)
 	end
 end

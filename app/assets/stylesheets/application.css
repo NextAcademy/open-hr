@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
+
  */
+/**/
+
+.testing_background {
+	background: lightgrey;
+}

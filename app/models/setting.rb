@@ -26,7 +26,6 @@ class Setting < ActiveRecord::Base
 		database_new_entry = []
 		database_update_entry = []
 		database_delete_entry = []
-		byebug
 		(date_now..date_now.end_of_year).each do |date|
 			day_number = date.cwday.to_s
 			day_float = 1
@@ -44,9 +43,7 @@ class Setting < ActiveRecord::Base
 		end
 		sql_delete = "DELETE FROM workdays WHERE workdate IN (#{database_delete_entry.join(",")})"
 		sql_update = "UPDATE workdays SET (full_or_half,updated_at) =
-						CASE 
-							#{database_update_entry.join(" ")}
-						END"
+						CASE #{database_update_entry.join(" ")} END"
 		sql_new = "INSERT INTO workdays (workdate,full_or_half,created_at,updated_at) VALUES #{database_new_entry.join(",")}"
 
 		Workday.connection.execute "#{sql_delete}" if !database_delete_entry.empty?

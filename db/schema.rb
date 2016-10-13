@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20161011043107) do
   create_table "leave_types", force: :cascade do |t|
     t.string   "leave_type_name"
     t.boolean  "unpaid_leave",    default: false
+    t.float    "default_amount"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end

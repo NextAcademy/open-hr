@@ -1,9 +1,11 @@
 <h1>Company Settings</h1>
 
 
-
+<div id="calendar" style="width:65%; height:65%"></div>
 <%=form_tag(controller: "settings", action: "set_work_days", method: "post") do %>
 
+
+<h2>Set Working Days</h2>
 <table>
 	<thead>
 		<th></th>
@@ -51,3 +53,33 @@
 
 <%= submit_tag "Set Work Day"%>
 <%end%>
+
+
+<h2>Set Leave Type</h2>
+<table>
+	<thead>
+		<th>Leave Type</th>
+		<th>Default Number of Days</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+		<%@leave_types.each do |lt|%>
+			<tr>
+				<td><%=lt.leave_type_name%></td>
+				<td><%=lt.default_amount%></td>
+			</tr>
+		<%end%>
+		<%=form_tag(controller: "settings", action: "set_leave_type", method: "post") do %>
+			<tr>
+				<td><%= text_field_tag "leave_type[leave_type_name]", nil,value: "Name of leave type"%></td>
+				<td><%= number_field_tag "leave_type[default_amount]", nil,:step => 'any', value: 0 %></td>	
+				<td><%= check_box_tag 'leave_type[unpaid_leave]', nil,nil, checked:true%> Unpaid Leave?</td>	
+			</tr>
+
+	</tbody>
+</table>
+
+<%= submit_tag "Set Leave Type"%>
+<%end%>
+
+
