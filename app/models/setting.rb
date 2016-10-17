@@ -24,7 +24,8 @@ class Setting < ActiveRecord::Base
 	def self.update_work_day_entries(rules)
 		date_now= Date.today
 		database_new_entry = []
-		database_update_entry = []
+		database_update_half_entry = []
+		database_update_full_entry = []
 		database_delete_entry = []
 		(date_now..date_now.end_of_year).each do |date|
 			day_number = date.cwday.to_s
@@ -34,7 +35,8 @@ class Setting < ActiveRecord::Base
 				if rules["off_days"].include?(day_number)
 					database_delete_entry.push "'#{date}'" 
 				else
-					database_update_entry.push "WHEN workdate = #{date} THEN ('#{day_float}','#{Time.now}')" 
+					database_update_half_entry.push "'#{date}'" if rules["half_days"].include?(day_number)
+					database_update_full_entry.push "'#{date}'" if !rules["half_days"].include?(day_number)
 				end
 			else
 				next if rules["off_days"].include?(day_number)
@@ -42,12 +44,13 @@ class Setting < ActiveRecord::Base
 			end
 		end
 		sql_delete = "DELETE FROM workdays WHERE workdate IN (#{database_delete_entry.join(",")})"
-		sql_update = "UPDATE workdays SET (full_or_half,updated_at) =
-						CASE #{database_update_entry.join(" ")} END"
+		sql_update_half = "UPDATE workdays SET (full_or_half) = (0.5) WHERE workdate IN (#{database_update_half_entry.join(",")})"
+		sql_update_full = "UPDATE workdays SET (full_or_half) = (0.5) WHERE workdate IN (#{database_update_full_entry.join(",")})"
 		sql_new = "INSERT INTO workdays (workdate,full_or_half,created_at,updated_at) VALUES #{database_new_entry.join(",")}"
-
+		byebug
 		Workday.connection.execute "#{sql_delete}" if !database_delete_entry.empty?
-		Workday.connection.execute "#{sql_update}" if !database_update_entry.empty?
+		Workday.connection.execute "#{sql_update_half}" if !database_update_half_entry.empty?
+		Workday.connection.execute "#{sql_update_full}" if !database_update_full_entry.empty?
 		Workday.connection.execute "#{sql_new}"	if !database_new_entry.empty?
 	end
 end

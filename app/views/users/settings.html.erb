@@ -2,6 +2,14 @@
 
 
 <div id="calendar" style="width:65%; height:65%"></div>
+
+<%=radio_button_tag(:event_option,"update")%>
+<%= label_tag(:event_option_update, "Update Holiday Title") %>
+<%=radio_button_tag(:event_option,"remove")%>
+<%= label_tag(:event_option_remove, "Remove Holiday") %>
+
+
+
 <%=form_tag(controller: "settings", action: "set_work_days", method: "post") do %>
 
 
