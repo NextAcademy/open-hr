@@ -44,6 +44,24 @@ class SettingsController < ApplicationController
 		render :json => dates
 	end
 
+	def holiday_history
+		dates =  Workday.where(holiday:true,workdate:(Date.parse(params[:start_date])..Date.parse(params[:end_date])))
+		render :json => dates
+	end
+
+	def holiday_update
+		day_selected = Workday.find_by(workdate:Date.parse(params[:date]))
+		if params[:holiday_action] == "update"
+			day_selected.update(holiday_name:params[:holiday_name])
+		elsif params[:holiday_action] == "remove"
+			day_selected.update(holiday_name:"",holiday:false)
+		elsif params[:holiday_action] == "create"
+			day_selected.update(holiday:true,holiday_name:params[:holiday_name])
+		end
+		success = true
+		render :json => success
+	end
+
 	private
 
 	def set_setting

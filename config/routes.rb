@@ -35,7 +35,8 @@ Rails.application.routes.draw do
   post '/set_work_days' => 'settings#set_work_days', as:'set_work_days'
   post '/set_leave_type' => 'settings#set_leave_type', as:'set_leave_type'
   post '/load_calendar' => 'settings#load_calendar', as:'load_calendar'
-
+  post '/holiday_history' => 'settings#holiday_history', as:'holiday_history'
+  post '/holiday_update' => 'settings#holiday_update', as:'holiday_update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
